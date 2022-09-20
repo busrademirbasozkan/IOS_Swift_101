@@ -10,6 +10,7 @@ import UIKit
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var SecondVCLabel: UILabel!
+    @IBOutlet weak var NameLabel: UILabel!
     
 
     override func viewDidLoad() {
