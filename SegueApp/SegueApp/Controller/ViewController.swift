@@ -17,6 +17,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NameTextField.text = ""
+    }
 
 
     @IBAction func NextButton(_sender: UIButton){
