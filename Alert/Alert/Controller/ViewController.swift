@@ -16,32 +16,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func signinButton(_sender:UIButton){
         
         if nameTextField.text == "" {
-            let alert = UIAlertController(title: "Error!", message: "Username not found", preferredStyle: UIAlertController.Style.alert)
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-            alert.addAction(okButton)
-            self.present(alert, animated: true, completion: nil)
+            alertFunc (titleInput:"Error!", messageInput:"Username not found")
         } else if passwordTextField.text == "" {
-            let alert = UIAlertController(title: "Error!", message: "Password not found", preferredStyle: UIAlertController.Style.alert)
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-            alert.addAction(okButton)
-            self.present(alert, animated: true, completion: nil)
+            alertFunc (titleInput:"Error!", messageInput:"Password not found")
         } else if passAgainTextField.text != passwordTextField.text {
-            let alert = UIAlertController(title: "Error!", message: "Password do not match", preferredStyle: UIAlertController.Style.alert)
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-            alert.addAction(okButton)
-            self.present(alert, animated: true, completion: nil)
+            alertFunc (titleInput:"Error!", messageInput:"Password not match")
         } else {
-            let alert = UIAlertController(title: "Success", message: "User found", preferredStyle: UIAlertController.Style.alert)
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-            alert.addAction(okButton)
-            self.present(alert, animated: true, completion: nil)
-        }
+            alertFunc (titleInput:"Success", messageInput:"User found")
+        }}
+    
+    func alertFunc (titleInput:String, messageInput:String){
+
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
         
     }
 
