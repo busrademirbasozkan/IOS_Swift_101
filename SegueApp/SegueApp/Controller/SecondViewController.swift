@@ -12,9 +12,12 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var SecondVCLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
     
+    var MyData = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NameLabel.text = "Name: \(MyData)"
 
     }
     

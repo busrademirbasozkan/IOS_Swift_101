@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var ViewControllerLabel: UILabel!
     @IBOutlet weak var NameTextField: UITextField!
+    var userName = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,16 @@ class ViewController: UIViewController {
 
 
     @IBAction func NextButton(_sender: UIButton){
+        userName = NameTextField.text!
         performSegue(withIdentifier: "toSecondVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSecondVC"{
+            let destinationVC = segue.destination as! SecondViewController
+            destinationVC.MyData = userName
+        }
+        
     }
     
 }
