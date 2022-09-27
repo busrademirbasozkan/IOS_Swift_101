@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var VanGoghLabel: UILabel!
     
+    var isVanGogh1 = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,14 @@ class ViewController: UIViewController {
 
 
     @objc func changePic(){
-        imageView.image = UIImage(named: "VanGogh2")
+        
+        if isVanGogh1 == true{
+            imageView.image = UIImage(named: "VanGogh2")
+            isVanGogh1 = false
+        } else{
+            imageView.image = UIImage(named: "VanGogh")
+            isVanGogh1 = true
+        }
     }
 }
 
